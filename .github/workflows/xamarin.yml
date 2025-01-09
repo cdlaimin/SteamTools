@@ -24,13 +24,13 @@ jobs:
         submodules: recursive
 
     - name: Setup .NET 6
-      uses: actions/setup-dotnet@v2
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
 
     - name: Add msbuild to PATH
       if: matrix.os == 'windows-latest'
-      uses: microsoft/setup-msbuild@v1.1
+      uses: microsoft/setup-msbuild@v1.3
 
 #    - name: Install macOS SDK(macOS)
 #      if: matrix.os == 'macOS-latest'
@@ -63,7 +63,7 @@ jobs:
       #  xcode-version: '12.x' # set the latest available Xcode 12
 
     - name: Setup Android NDK
-      uses: nttld/setup-ndk@v1.0.6
+      uses: nttld/setup-ndk@v1.2.0
       id: setup-ndk
       with:
         ndk-version: r21e
